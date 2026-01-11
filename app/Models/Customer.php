@@ -21,11 +21,5 @@ class Customer extends Model
         'notes',
     ];
 
-    /**
-     * Cars this customer is associated with
-     */
-    public function cars()
-    {
-        return $this->belongsToMany(Car::class);
-    }
+
 }

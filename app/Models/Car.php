@@ -29,11 +29,5 @@ class Car extends Model
         'year' => 'integer',
     ];
 
-    /**
-     * Customers interested in this car
-     */
-    public function customers()
-    {
-        return $this->belongsToMany(Customer::class);
-    }
+
 }

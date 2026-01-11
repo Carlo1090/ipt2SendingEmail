@@ -9,12 +9,19 @@ use App\Mail\NewcarproductEmail;
 class CarEmailController extends Controller
 {
     public function send(Car $car)
-    {
-        foreach ($car->customers as $customer) {
-            Mail::to($customer->email)
-                ->send(new NewcarproductEmail($car));
-        }
+{
+    $emails = [
+        'johncarlomar160@gmail.com',
+        'carlogwapo160@gmail.com',
+    ];
 
-        return back()->with('success', 'Emails sent successfully!');
+    foreach ($emails as $email) {
+        Mail::to($email)
+            ->send(new NewcarproductEmail($car));
     }
+
+    return back()->with('success', 'Emails sent successfully!');
+}
+
+
 }

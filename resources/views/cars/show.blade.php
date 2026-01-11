@@ -104,14 +104,14 @@
                             </button>
                         </form>
 
-                        {{-- SEND EMAIL --}}
-                        <form action="{{ route('cars.email', $car) }}" method="POST">
-                            @csrf
-                            <button type="submit"
-                                    class="inline-flex items-center px-6 py-3 bg-green-600 text-white rounded-md font-medium hover:bg-green-700">
-                                Send Email
-                            </button>
-                        </form>
+                            {{-- SEND EMAIL --}}
+                            <form action="{{ route('cars.email', $car) }}" method="POST">
+                                @csrf
+                                <button type="submit"
+                                        class="inline-flex items-center px-6 py-3 bg-green-600 text-white rounded-md font-medium hover:bg-green-700">
+                                    Send Email
+                                </button>
+                            </form>
                     </div>
                 </div>
             </div>
