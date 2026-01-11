@@ -4,6 +4,7 @@ use App\Http\Controllers\CarController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CarEmailController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -14,6 +15,9 @@ Route::resource('cars', CarController::class);
 
 // Customer routes
 Route::resource('customers', CustomerController::class);
+Route::post('/cars/{car}/email', [CarEmailController::class, 'send'])
+    ->name('cars.email');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
