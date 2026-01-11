@@ -10,10 +10,11 @@ class CarEmailController extends Controller
 {
     public function send(Car $car)
     {
-        Mail::to('ipt2@lentrix-dev.com')
-            ->send(new NewcarproductEmail($car));
+        foreach ($car->customers as $customer) {
+            Mail::to($customer->email)
+                ->send(new NewcarproductEmail($car));
+        }
 
-
-        return back()->with('success', 'Email sent successfully!');
+        return back()->with('success', 'Emails sent successfully!');
     }
 }

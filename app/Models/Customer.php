@@ -20,4 +20,12 @@ class Customer extends Model
         'zip_code',
         'notes',
     ];
+
+    /**
+     * Cars this customer is associated with
+     */
+    public function cars()
+    {
+        return $this->belongsToMany(Car::class);
+    }
 }
